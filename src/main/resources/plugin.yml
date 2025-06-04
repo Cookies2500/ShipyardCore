@@ -1,0 +1,10 @@
+name: ShipyardCore
+version: '${version}'
+main: cookies250.shipyardcore.ShipyardCore
+api-version: 1.21
+authors: [ Cookies250, Chilly_Willy ]
+commands:
+  assembleship:
+  moveship:
+  destroyship:
+  listships:
