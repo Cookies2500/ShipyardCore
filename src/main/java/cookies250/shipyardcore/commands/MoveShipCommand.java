@@ -1,7 +1,7 @@
-package cookies250.shipyardcore.Commands;
+package cookies250.shipyardcore.commands;
 
-import cookies250.shipyardcore.Ships.Ship;
-import cookies250.shipyardcore.Ships.ShipManager;
+import cookies250.shipyardcore.ships.Ship;
+import cookies250.shipyardcore.ships.ShipManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;

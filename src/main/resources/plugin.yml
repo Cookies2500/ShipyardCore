@@ -8,3 +8,6 @@ commands:
   moveship:
   destroyship:
   listships:
+  setshipvelocity:
+  testcommand:
+  addplayervelocity:

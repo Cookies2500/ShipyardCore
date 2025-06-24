@@ -1,4 +1,4 @@
-package cookies250.shipyardcore.World;
+package cookies250.shipyardcore.world;
 
 import org.bukkit.*;
 

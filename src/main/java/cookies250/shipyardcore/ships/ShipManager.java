@@ -1,4 +1,4 @@
-package cookies250.shipyardcore.Ships;
+package cookies250.shipyardcore.ships;
 
 import java.util.ArrayList;
 import java.util.List;

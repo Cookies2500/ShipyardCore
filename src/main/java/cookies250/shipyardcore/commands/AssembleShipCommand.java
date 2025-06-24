@@ -1,4 +1,4 @@
-package cookies250.shipyardcore.Commands;
+package cookies250.shipyardcore.commands;
 
 import com.sk89q.worldedit.IncompleteRegionException;
 import com.sk89q.worldedit.LocalSession;
@@ -8,8 +8,8 @@ import com.sk89q.worldedit.regions.Region;
 import com.sk89q.worldedit.session.SessionManager;
 import com.sk89q.worldedit.util.formatting.text.TextComponent;
 import cookies250.shipyardcore.ShipyardCore;
-import cookies250.shipyardcore.Ships.Ship;
-import cookies250.shipyardcore.Ships.ShipManager;
+import cookies250.shipyardcore.ships.Ship;
+import cookies250.shipyardcore.ships.ShipManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

@@ -1,4 +1,4 @@
-package cookies250.shipyardcore.Commands;
+package cookies250.shipyardcore.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

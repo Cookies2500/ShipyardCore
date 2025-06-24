@@ -1,4 +1,4 @@
-package cookies250.shipyardcore.Ships;
+package cookies250.shipyardcore.ships;
 
 import io.papermc.paper.entity.TeleportFlag;
 import org.bukkit.Location;
@@ -36,10 +36,7 @@ public class ShipBlock {
     }
 
     public void teleport(Vector vector) {
-        print("Teleporting ship block to X: " + vector.getX() + " Y: " + vector.getY() + " Z: " + vector.getZ());
-        print(parent.getWorld().getName());
-        boolean a = blockDisplay.teleport(new Location(parent.getWorld(), vector.getX(), vector.getY(), vector.getZ()), TeleportFlag.EntityState.RETAIN_PASSENGERS);
-        print("" + a);
+        blockDisplay.teleport(new Location(parent.getWorld(), vector.getX() + 0.5, vector.getY(), vector.getZ() + 0.5), TeleportFlag.EntityState.RETAIN_PASSENGERS);
     }
 
     public BlockVector getRelativeBlockLocation() {
@@ -74,6 +71,8 @@ public class ShipBlock {
         blockDisplay.setBlock(block.getBlockData().clone());
         blockDisplay.addScoreboardTag("kill_all");
         blockDisplay.addScoreboardTag("blocks");
+        blockDisplay.setInterpolationDelay(1);
+        blockDisplay.setTeleportDuration(1);
         blockDisplay.setTransformationMatrix(new Matrix4f().translate(-0.5f, 0.0f, -0.5f));
         Location blockLocation = blockDisplay.getLocation();
         boolean a = blockDisplay.teleport(new Location(block.getWorld(), blockLocation.getX() + 0.5, blockLocation.getY(), blockLocation.getZ() + 0.5), TeleportFlag.EntityState.RETAIN_PASSENGERS);

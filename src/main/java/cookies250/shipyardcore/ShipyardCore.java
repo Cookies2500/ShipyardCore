@@ -1,17 +1,14 @@
 package cookies250.shipyardcore;
 
-import cookies250.shipyardcore.Commands.AssembleShipCommand;
-import cookies250.shipyardcore.Commands.DestroyShipCommand;
-import cookies250.shipyardcore.Commands.ListShipsCommand;
-import cookies250.shipyardcore.Commands.MoveShipCommand;
-import cookies250.shipyardcore.World.ShipyardWorld;
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
+import cookies250.shipyardcore.commands.*;
+import cookies250.shipyardcore.events.Events;
+import cookies250.shipyardcore.world.ShipyardWorld;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.plugin.java.JavaPlugin;
-
-
-// TODO set up github
 
 // TODO Drag player along with the ship - Use velocity - https://docs.papermc.io/paper/dev/entity-teleport/#:~:text=the%20TeleportFlag%20class.-,Relative%20teleportation,Section%20titled%20“Relative%20teleportation”,-Teleport%20a%20player
 
@@ -27,15 +24,22 @@ public final class ShipyardCore extends JavaPlugin {
 
     public static ShipyardCore shipyardPlugin;
 
+    private static ProtocolManager protocolManager;
+
     @Override
     public void onEnable() {
+
+        ShipyardCore.shipyardPlugin = this;
+        protocolManager = ProtocolLibrary.getProtocolManager();
+
+        getServer().getPluginManager().registerEvents(new Events(), this);
 
         registerTabCompleter("assembleship", new AssembleShipCommand());
         registerTabCompleter("destroyship", new DestroyShipCommand());
         registerTabCompleter("listships", new ListShipsCommand());
         registerTabCompleter("moveship", new MoveShipCommand());
-
-        ShipyardCore.shipyardPlugin = this;
+        registerTabCompleter("setshipvelocity", new SetShipVelocityCommand());
+        registerTabCompleter("addplayervelocity", new AddPlayerVelocityCommand());
 
         ShipyardWorld.initialize();
 
@@ -45,6 +49,11 @@ public final class ShipyardCore extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+
+    public static ProtocolManager getProtocolManager() {
+        return protocolManager;
     }
 
 
